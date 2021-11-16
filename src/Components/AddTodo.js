@@ -12,14 +12,19 @@ const AddTodo = ({ addTodo }) => {
     e.preventDefault();
     const todo = { id: Math.random, content };
     addTodo(todo);
+    setContent("");
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label> Add new todo: </label>
-        <input type="text" onChange={handleChange} id="todo"></input>
-        <button>Submit</button>
+        <input
+          type="text"
+          onChange={handleChange}
+          value={content}
+          id="todo"
+        ></input>
       </form>
     </div>
   );
